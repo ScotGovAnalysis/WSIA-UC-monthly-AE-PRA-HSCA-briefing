@@ -1,0 +1,68 @@
+---
+title: ""
+output:
+  word_document:
+    reference_docx: ../templates/HSCA_briefing_monthly_AE_template.docx
+---
+::: {custom-style="Heading 1"}
+Note on Quality Assessment
+:::
+
+::: {custom-style="Normal"}
+Monthly A&E PRA - HSCA Briefing
+
+This is an automated report, and requires some QA to ensure outputs have been produced properly. Steps include:
+
+- Check all contact information (analysts and comms) are up to date, as these may have been temporary cover.
+- Check the dates to ensure these have correctly updated.
+
+**Please see the automated report below.**
+
+OFFICIAL-SENSITIVE
+:::
+
+\newpage
+
+::: {custom-style="Heading 1"}
+Annex 1 [MONTHLY A&E WAITING TIMES STATISTICS (`r toupper(format(monthly_dates$date_this_month, "%B %Y"))`)](https://www.publichealthscotland.scot/data-and-intelligence/ae-activity/)
+:::
+
+::: {custom-style="Normal"}
+**Lead Minister:** Cabinet Secretary for Health and Care
+
+**Designation:** Accredited Official Statistics
+
+**Target/commitment:** N/A
+
+**Next update and frequency:** `r format(monthly_dates$date_next_update, "%d %B %Y")`; monthly
+
+```{r results='asis', echo=FALSE}
+if (nzchar(missing_boards_message)) {
+
+  cat('::: {custom-style="WarningMessage"}\n\n')
+
+  cat(missing_boards_message)
+
+  cat('\n\n:::\n')
+
+}
+```
+
+**Summary:** 
+
+**Key points:**
+:::
+
+::: {custom-style="MAIN CONTENT"}
+- 
+:::
+
+::: {custom-style="Normal"}
+**Note on data quality and limitations:** 
+
+**Contact information**
+
+**Analysts**: Lucy Horner (Lucy.Horner@gov.scot); Katie Hendry (Katie.Hendry@gov.scot); Sophie Quinn (Sophie.Quinn2@gov.scot)
+
+**Communications**: 
+:::

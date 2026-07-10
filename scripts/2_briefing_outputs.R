@@ -1,0 +1,73 @@
+
+# ============================================================
+# Script name:   2_briefing_outputs.R
+# Purpose:       Outputs for HSCA briefing (monthly A&E PRA)
+# Author:        Sophie Quinn
+# Date created:  2026-07-06
+# Last updated:  2026-07-10 by SQ
+# ============================================================
+
+# Inputs: Data in environment from data processing
+# Outputs: Briefing outputs
+# Depends on: Functions
+
+# ---- Variables for briefing ----
+
+monthly_dates <- get_dates_monthly(monthly_data$Scotland)
+
+monthly_values_all <- get_values_monthly(
+  monthly_data$Scotland,
+  monthly_dates,
+  "All"
+)
+
+monthly_values_type1 <- get_values_monthly(
+  monthly_data$Scotland,
+  monthly_dates,
+  "Type 1"
+)
+
+three_nations_values <- get_values_three_nations(
+  monthly_data$Scotland,
+  monthly_dates
+)
+
+
+# ---- Check for missing boards ----
+
+missing_boards <- check_missing_boards(
+  monthly_data$Boards
+)
+
+if (nrow(missing_boards) > 0) {
+  
+  missing_boards_summary <- missing_boards_summary_monthly(
+    monthly_data$Boards,
+    monthly_data$Scotland,
+    missing_boards
+  )
+  
+  missing_boards_message <- missing_boards_message_monthly(
+    missing_boards_summary
+  )
+  
+} else {
+  
+  missing_boards_summary <- tibble()
+  
+  missing_boards_message <- ""
+  
+}
+
+
+
+# ---- Weekly briefing markdown ----
+
+rmarkdown::render(input = here("scripts", "HSCA_briefing_monthly_AE.Rmd"),
+                  output_file = here(
+                    "outputs", 
+                    paste0("HSCA Briefing - Monthly AE Update - ",format(monthly_dates$date_publication, "%d %B %Y"))
+                    )
+                  )
+
+                  
