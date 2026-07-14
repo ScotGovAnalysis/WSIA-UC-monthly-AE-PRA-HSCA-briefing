@@ -22,3 +22,11 @@ increase_decrease <- function(x) {
     TRUE ~ "no change"
   )
 }
+
+above_below <- function(x) {
+  case_when(
+    x > 0 ~ "above",
+    x < 0 ~ "below",
+    TRUE ~ "same as"
+  )
+}

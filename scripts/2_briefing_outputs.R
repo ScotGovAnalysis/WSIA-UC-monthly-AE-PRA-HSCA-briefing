@@ -27,6 +27,10 @@ monthly_values_type1 <- get_values_monthly(
   "Type 1"
 )
 
+last_12_month_perf <- get_last_12_month_perf(
+  monthly_data$Scotland
+)
+
 three_nations_values <- get_values_three_nations(
   monthly_data$Scotland,
   monthly_dates
