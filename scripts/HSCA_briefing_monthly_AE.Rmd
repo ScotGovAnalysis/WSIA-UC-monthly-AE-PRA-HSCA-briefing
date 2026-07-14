@@ -15,8 +15,6 @@ This Monthly A&E PRA HSCA briefing is an automated report, and requires some QA 
 - Check the dates to ensure these have correctly updated.
 
 **Please see the automated report below.**
-
-OFFICIAL-SENSITIVE
 :::
 
 \newpage
@@ -71,7 +69,7 @@ knitr::include_graphics(
 
 [BOARD 4HR AND 12HR PERFORMANCE TABLE HERE]
 
-- Five lowest performing sies this month (`r format(monthly_dates$date_this_month, "%B %Y")`) were: 
+- Five lowest performing sites this month (`r format(monthly_dates$date_this_month, "%B %Y")`) were: 
 - Scotland Core ED 4-hour performance in `r format(monthly_dates$date_this_month, "%B %Y")` was X percentage points [higher/lower] than England Type 1 (X%) and X percentage points [higher/lower] than Wales Major (X%). 
 
 **Note on data quality and limitations:** While the data undergo routine validation checks, differences in local service arrangements may affect comparisons between areas and over time. Due to the timeliness of data submissions and the dynamic nature of the A&E dataset, figures may be revised in subsequent publications.

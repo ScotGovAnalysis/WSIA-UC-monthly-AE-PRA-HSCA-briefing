@@ -18,21 +18,26 @@ create_4hr_performance_chart_monthly <- function(monthly_data) {
   
   
   month_lookup <- tibble(
-    Month = factor(
-      month.name,
-      levels = month.name,
-      ordered = TRUE
-    ),
-    EquivalentMonthThisYear =
-      ceiling_date(
-        seq(
-          as.Date(paste0(latest_year, "-01-01")),
-          by = "1 month",
-          length.out = 12
-        ),
-        "month"
-      ) - 1
-  )
+    EquivalentMonthThisYear = seq(
+      from = as.Date(paste0(latest_year, "-01-01")),
+      by = "1 month",
+      length.out = 12
+    )
+  ) %>%
+    mutate(
+      Month = factor(
+        month.name,
+        levels = month.name,
+        ordered = TRUE
+      ),
+      EquivalentMonthThisYear =
+        ceiling_date(EquivalentMonthThisYear, "month") - days(1)
+    ) %>%
+    select(
+      Month,
+      EquivalentMonthThisYear
+    )
+  
   
   graph_data <- monthly_data %>%
     filter(
@@ -55,9 +60,13 @@ create_4hr_performance_chart_monthly <- function(monthly_data) {
     geom_line(linewidth = 1) +
     scale_colour_manual(values = colour_values) +
     scale_x_date(
-      date_breaks = "1 month",
-      date_labels = "%d %b %Y",
-      expand = c(0, 0)
+      breaks = month_lookup$EquivalentMonthThisYear,
+      date_labels = "%b %Y",
+      expand = c(0.01, 0.01)
+      ) +
+    scale_y_continuous(
+      limits = c(55, 85),
+      breaks = seq(55, 85, 5)
     ) +
     labs(
       title = "NHS Scotland: Monthly (All sites) ED 4-hour performance by calendar year",
