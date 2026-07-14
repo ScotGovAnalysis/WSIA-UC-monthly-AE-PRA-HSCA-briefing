@@ -64,30 +64,30 @@ get_values_monthly <- function(monthly_data, monthly_dates, dep_type) {
     
     # Over 12-hour waits
     waits12hr_this_month =
-      this_month$NumberOver12HoursAll,
+      this_month$NumberOver12HoursEpisode,
     
     waits12hr_last_month =
-      last_month$NumberOver12HoursAll,
+      last_month$NumberOver12HoursEpisode,
     
     waits12hr_last_year =
-      last_year$NumberOver12HoursAll,
+      last_year$NumberOver12HoursEpisode,
     
     
     waits12hr_diff_last_month = round(
       100 * (
-        this_month$NumberOver12HoursAll -
-          last_month$NumberOver12HoursAll
+        this_month$NumberOver12HoursEpisode -
+          last_month$NumberOver12HoursEpisode
       ) /
-        last_month$NumberOver12HoursAll,
+        last_month$NumberOver12HoursEpisode,
       1
     ),
     
     waits12hr_diff_last_year = round(
       100 * (
-        this_month$NumberOver12HoursAll -
-          last_year$NumberOver12HoursAll
+        this_month$NumberOver12HoursEpisode -
+          last_year$NumberOver12HoursEpisode
       ) /
-        last_year$NumberOver12HoursAll,
+        last_year$NumberOver12HoursEpisode,
       1
     )
     
