@@ -31,6 +31,10 @@ last_12_month_perf <- get_last_12_month_perf(
   monthly_data$Scotland
 )
 
+create_4hr_performance_chart_monthly(
+  monthly_data$Scotland
+)
+
 three_nations_values <- get_values_three_nations(
   monthly_data$Scotland,
   monthly_dates

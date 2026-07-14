@@ -50,7 +50,14 @@ if (nzchar(missing_boards_message)) {
 
 **Key points:**
 
-[PERFORMANCE CHART HERE]
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics(
+  here::here(
+    "outputs",
+    "monthly-4hr-performance-chart.png"
+  )
+)
+```
 
 - Monthly figures for `r format(monthly_dates$date_this_month, "%B %Y")` show that performance against the four-hour A&E target was:
   - `r monthly_values_all$perf4hr_this_month`% for All sites, `r up_down(monthly_values_all$perf4hr_diff_last_year)` compared to `r monthly_values_all$perf4hr_last_year`% in `r format(monthly_dates$date_last_year, "%B %Y")`.
