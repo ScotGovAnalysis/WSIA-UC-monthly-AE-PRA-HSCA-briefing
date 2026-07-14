@@ -35,6 +35,10 @@ create_4hr_performance_chart_monthly(
   monthly_data$Scotland
 )
 
+five_lowest_sites <- get_five_lowest_sites_monthly(
+  monthly_data$Sites
+)
+
 three_nations_values <- get_values_three_nations(
   monthly_data$Scotland,
   monthly_dates

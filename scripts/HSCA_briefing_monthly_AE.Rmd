@@ -69,7 +69,8 @@ knitr::include_graphics(
 
 [BOARD 4HR AND 12HR PERFORMANCE TABLE HERE]
 
-- Five lowest performing sites this month (`r format(monthly_dates$date_this_month, "%B %Y")`) were: 
+- Five lowest performing sites this month (`r format(monthly_dates$date_this_month, "%B %Y")`) were: `r five_lowest_sites`.
+
 - Scotland Core ED 4-hour performance in `r format(monthly_dates$date_this_month, "%B %Y")` (`r three_nations_values$perf4hr_scotland`%) was `r abs(three_nations_values$perf4hr_diff_england)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_england)` England Type 1 (`r three_nations_values$perf4hr_england`%) and `r abs(three_nations_values$perf4hr_diff_wales)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_wales)` Wales Major (`r three_nations_values$perf4hr_wales`%). 
 
 **Note on data quality and limitations:** While the data undergo routine validation checks, differences in local service arrangements may affect comparisons between areas and over time. Due to the timeliness of data submissions and the dynamic nature of the A&E dataset, figures may be revised in subsequent publications.
