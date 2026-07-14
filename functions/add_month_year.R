@@ -9,7 +9,7 @@ add_month_year <- function(monthly_data) {
     abbr = FALSE
   )
   
-  monthly_data$Year <- isoyear(monthly_data$MonthEndingDate)
+  monthly_data$Year <- year(monthly_data$MonthEndingDate)
   
   monthly_data
   

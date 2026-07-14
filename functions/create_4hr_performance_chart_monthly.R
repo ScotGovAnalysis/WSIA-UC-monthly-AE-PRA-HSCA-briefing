@@ -57,7 +57,9 @@ create_4hr_performance_chart_monthly <- function(monthly_data) {
         colour = factor(Year)
       )
     ) +
-    geom_line(linewidth = 1) +
+    geom_line(linewidth = 1,
+              aes(group = Year)
+              ) +
     scale_colour_manual(values = colour_values) +
     scale_x_date(
       breaks = month_lookup$EquivalentMonthThisYear,
@@ -69,7 +71,7 @@ create_4hr_performance_chart_monthly <- function(monthly_data) {
       breaks = seq(55, 85, 5)
     ) +
     labs(
-      title = "NHS Scotland: Monthly (All sites) ED 4-hour performance by calendar year",
+      title = "NHS Scotland: Monthly accident and emergency 4-hour performance (All sites) by calendar year",
       x = "Month ending date",
       y = "4-hour performance (%)"
     ) +
