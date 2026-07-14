@@ -9,16 +9,12 @@ Note on Quality Assessment
 :::
 
 ::: {custom-style="Normal"}
-Monthly A&E PRA - HSCA Briefing
-
-This is an automated report, and requires some QA to ensure outputs have been produced properly. Steps include:
+This **Monthly A&E PRA HSCA briefing** is an automated report and requires some QA to ensure outputs have been produced properly. Steps include:
 
 - Check all contact information (analysts and comms) are up to date, as these may have been temporary cover.
 - Check the dates to ensure these have correctly updated.
 
 **Please see the automated report below.**
-
-OFFICIAL-SENSITIVE
 :::
 
 \newpage
@@ -48,21 +44,40 @@ if (nzchar(missing_boards_message)) {
 }
 ```
 
-**Summary:** 
+**Summary:** [WRITE SUMMARY HERE]
 
 **Key points:**
-:::
 
-::: {custom-style="MAIN CONTENT"}
-- 
-:::
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics(
+  here::here(
+    "outputs",
+    "monthly-4hr-performance-chart.png"
+  )
+)
+```
 
-::: {custom-style="Normal"}
-**Note on data quality and limitations:** 
+- Monthly figures for `r format(monthly_dates$date_this_month, "%B %Y")` show that performance against the four-hour A&E target was:
+  - `r monthly_values_all$perf4hr_this_month`% for All sites, `r up_down(monthly_values_all$perf4hr_diff_last_year)` compared to `r monthly_values_all$perf4hr_last_year`% in `r format(monthly_dates$date_last_year, "%B %Y")`.
+  - `r monthly_values_type1$perf4hr_this_month`% for Core sites, `r up_down(monthly_values_type1$perf4hr_diff_last_year)` compared to `r monthly_values_type1$perf4hr_last_year`% in `r format(monthly_dates$date_last_year, "%B %Y")`.
+  
+- `r last_12_month_perf`
+
+- The number of patients spending over 12 hours in A&E in `r format(monthly_dates$date_this_month, "%B %Y")` was `r comma(monthly_values_all$waits12hr_this_month)`, `r increase_decrease(monthly_values_all$waits12hr_diff_last_month)` of `r abs(monthly_values_all$waits12hr_diff_last_month)`% from last month (`r comma(monthly_values_all$waits12hr_last_month)`), and `r abs(monthly_values_all$waits12hr_diff_last_year)`% `r above_below(monthly_values_all$waits12hr_diff_last_year)` waits seen in `r format(monthly_dates$date_last_year, "%B")` last year (`r comma(monthly_values_all$waits12hr_last_year)`).
+
+- The number of attendances in A&E in `r format(monthly_dates$date_this_month, "%B %Y")` was `r comma(monthly_values_all$attendances_this_month)`, `r abs(monthly_values_all$attendances_diff_last_month)`% `r higher_lower(monthly_values_all$attendances_diff_last_month)` last month (`r comma(monthly_values_all$attendances_last_month)`), and `r abs(monthly_values_all$attendances_diff_last_year)`% `r above_below(monthly_values_all$attendances_diff_last_year)` attendances in `r format(monthly_dates$date_last_year, "%B")` last year (`r comma(monthly_values_all$attendances_last_year)`).
+
+[BOARD 4HR AND 12HR PERFORMANCE TABLE HERE]
+
+- Five lowest performing sites this month (`r format(monthly_dates$date_this_month, "%B %Y")`) were: `r five_lowest_sites`.
+
+- Scotland Core ED 4-hour performance in `r format(monthly_dates$date_this_month, "%B %Y")` (`r three_nations_values$perf4hr_scotland`%) was `r abs(three_nations_values$perf4hr_diff_england)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_england)` England Type 1 (`r three_nations_values$perf4hr_england`%) and `r abs(three_nations_values$perf4hr_diff_wales)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_wales)` Wales Major (`r three_nations_values$perf4hr_wales`%). 
+
+**Note on data quality and limitations:** While the data undergo routine validation checks, differences in local service arrangements may affect comparisons between areas and over time. Due to the timeliness of data submissions and the dynamic nature of the A&E dataset, figures may be revised in subsequent publications.
 
 **Contact information**
 
 **Analysts**: Lucy Horner (Lucy.Horner@gov.scot); Katie Hendry (Katie.Hendry@gov.scot); Sophie Quinn (Sophie.Quinn2@gov.scot)
 
-**Communications**: 
+**Communications**: Laura Robertson (Laura.Robertson2@gov.scot); Ewan Smith (Ewan.Smith2@gov.scot); Jackie Stewart (Jackie.Stewart@gov.scot); Michael McHugh (Michael.McHugh@gov.scot) 
 :::

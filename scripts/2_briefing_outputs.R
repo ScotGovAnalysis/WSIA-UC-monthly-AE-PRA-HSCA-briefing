@@ -27,6 +27,18 @@ monthly_values_type1 <- get_values_monthly(
   "Type 1"
 )
 
+last_12_month_perf <- get_last_12_month_perf(
+  monthly_data$Scotland
+)
+
+create_4hr_performance_chart_monthly(
+  monthly_data$Scotland
+)
+
+five_lowest_sites <- get_five_lowest_sites_monthly(
+  monthly_data$Sites
+)
+
 three_nations_values <- get_values_three_nations(
   monthly_data$Scotland,
   monthly_dates

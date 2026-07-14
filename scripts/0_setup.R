@@ -22,6 +22,8 @@ library(lubridate)
 library(rmarkdown)
 library(knitr)
 library(scales)
+library(ggplot2)
+library(ggExtra)
 
 
 # 2 ---- Load functions ----

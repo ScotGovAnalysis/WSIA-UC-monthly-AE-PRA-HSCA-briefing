@@ -16,48 +16,48 @@ get_values_monthly <- function(monthly_data, monthly_dates, dep_type) {
   list(
     
     # 4-hour performance
-    perf4hr_this_month = this_month$PercentageWithin4HoursEpisode,
-    perf4hr_last_month = last_month$PercentageWithin4HoursEpisode,
-    perf4hr_last_year = last_year$PercentageWithin4HoursEpisode,
+    perf4hr_this_month = this_month$PercentageWithin4HoursAll,
+    perf4hr_last_month = last_month$PercentageWithin4HoursAll,
+    perf4hr_last_year = last_year$PercentageWithin4HoursAll,
     
     perf4hr_diff_last_month = round(
-      this_month$PercentageWithin4HoursEpisode -
-        last_month$PercentageWithin4HoursEpisode,
+      this_month$PercentageWithin4HoursAll -
+        last_month$PercentageWithin4HoursAll,
       1
     ),
     
     perf4hr_diff_last_year = round(
-      this_month$PercentageWithin4HoursEpisode -
-        last_year$PercentageWithin4HoursEpisode,
+      this_month$PercentageWithin4HoursAll -
+        last_year$PercentageWithin4HoursAll,
       1
     ),
     
     
     # Attendances
     attendances_this_month =
-      this_month$NumberOfAttendancesEpisode,
+      this_month$NumberOfAttendancesAll,
     
     attendances_last_month =
-      last_month$NumberOfAttendancesEpisode,
+      last_month$NumberOfAttendancesAll,
     
     attendances_last_year =
-      last_year$NumberOfAttendancesEpisode,
+      last_year$NumberOfAttendancesAll,
     
     attendances_diff_last_month = round(
       100 * (
-        this_month$NumberOfAttendancesEpisode -
-          last_month$NumberOfAttendancesEpisode
+        this_month$NumberOfAttendancesAll -
+          last_month$NumberOfAttendancesAll
       ) /
-        last_month$NumberOfAttendancesEpisode,
+        last_month$NumberOfAttendancesAll,
       1
     ),
     
     attendances_diff_last_year = round(
       100 * (
-        this_month$NumberOfAttendancesEpisode -
-          last_year$NumberOfAttendancesEpisode
+        this_month$NumberOfAttendancesAll -
+          last_year$NumberOfAttendancesAll
       ) /
-        last_year$NumberOfAttendancesEpisode,
+        last_year$NumberOfAttendancesAll,
       1
     ),
     
