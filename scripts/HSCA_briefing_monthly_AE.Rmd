@@ -9,7 +9,7 @@ Note on Quality Assessment
 :::
 
 ::: {custom-style="Normal"}
-This Monthly A&E PRA HSCA briefing is an automated report, and requires some QA to ensure outputs have been produced properly. Steps include:
+This **Monthly A&E PRA HSCA briefing** is an automated report and requires some QA to ensure outputs have been produced properly. Steps include:
 
 - Check all contact information (analysts and comms) are up to date, as these may have been temporary cover.
 - Check the dates to ensure these have correctly updated.
