@@ -73,7 +73,7 @@ if (nrow(missing_boards) > 0) {
 
 
 
-# ---- Weekly briefing markdown ----
+# ---- Monthly briefing markdown ----
 
 rmarkdown::render(input = here("scripts", "HSCA_briefing_monthly_AE.Rmd"),
                   output_file = here(
