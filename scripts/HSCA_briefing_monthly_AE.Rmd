@@ -28,7 +28,7 @@ Annex 1 [MONTHLY A&E WAITING TIMES STATISTICS (`r toupper(format(monthly_dates$d
 
 **Designation:** Accredited Official Statistics
 
-**Target/commitment:** N/A
+**Target/commitment:** 95% 4-hour performance across all sites.
 
 **Next update and frequency:** `r format(monthly_dates$date_next_update, "%d %B %Y")`; monthly
 
@@ -63,17 +63,19 @@ knitr::include_graphics(
   
 - `r last_12_month_perf`
 
-- The number of patients spending over 12 hours in A&E in `r format(monthly_dates$date_this_month, "%B %Y")` was `r comma(monthly_values_all$waits12hr_this_month)`, `r increase_decrease(monthly_values_all$waits12hr_diff_last_month)` of `r abs(monthly_values_all$waits12hr_diff_last_month)`% from last month (`r comma(monthly_values_all$waits12hr_last_month)`), and `r abs(monthly_values_all$waits12hr_diff_last_year)`% `r above_below(monthly_values_all$waits12hr_diff_last_year)` waits seen in `r format(monthly_dates$date_last_year, "%B")` last year (`r comma(monthly_values_all$waits12hr_last_year)`).
+- The number of patients spending over 12 hours in A&E in `r format(monthly_dates$date_this_month, "%B %Y")` was `r comma(monthly_values_all$waits12hr_this_month)`, `r increase_decrease(monthly_values_all$waits12hr_diff_last_month)` of `r abs(monthly_values_all$waits12hr_diff_last_month)`% from last month and `r abs(monthly_values_all$waits12hr_diff_last_year)`% `r above_below(monthly_values_all$waits12hr_diff_last_year)` waits seen in `r format(monthly_dates$date_last_year, "%B")` last year.
 
-- The number of attendances in A&E in `r format(monthly_dates$date_this_month, "%B %Y")` was `r comma(monthly_values_all$attendances_this_month)`, `r abs(monthly_values_all$attendances_diff_last_month)`% `r higher_lower(monthly_values_all$attendances_diff_last_month)` last month (`r comma(monthly_values_all$attendances_last_month)`), and `r abs(monthly_values_all$attendances_diff_last_year)`% `r above_below(monthly_values_all$attendances_diff_last_year)` attendances in `r format(monthly_dates$date_last_year, "%B")` last year (`r comma(monthly_values_all$attendances_last_year)`).
+- The number of attendances in A&E in `r format(monthly_dates$date_this_month, "%B %Y")` was `r comma(monthly_values_all$attendances_this_month)`, `r abs(monthly_values_all$attendances_diff_last_month)`% `r higher_lower(monthly_values_all$attendances_diff_last_month)` last month and `r abs(monthly_values_all$attendances_diff_last_year)`% `r above_below(monthly_values_all$attendances_diff_last_year)` attendances in `r format(monthly_dates$date_last_year, "%B")` last year.
 
-[BOARD 4HR AND 12HR PERFORMANCE TABLE HERE]
+- Five lowest performing boards this month (`r format(monthly_dates$date_this_month, "%B %Y")`) were: `r five_lowest_boards`.
 
 - Five lowest performing sites this month (`r format(monthly_dates$date_this_month, "%B %Y")`) were: `r five_lowest_sites`.
 
-- Scotland Core ED 4-hour performance in `r format(monthly_dates$date_this_month, "%B %Y")` (`r three_nations_values$perf4hr_scotland`%) was `r abs(three_nations_values$perf4hr_diff_england)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_england)` England Type 1 (`r three_nations_values$perf4hr_england`%) and `r abs(three_nations_values$perf4hr_diff_wales)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_wales)` Wales Major (`r three_nations_values$perf4hr_wales`%). 
+- Scotland Core ED 4-hour performance in `r format(monthly_dates$date_this_month, "%B %Y")` was `r three_nations_values$perf4hr_scotland`%, this was `r abs(three_nations_values$perf4hr_diff_england)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_england)` England Type 1 performance at `r three_nations_values$perf4hr_england`% and `r abs(three_nations_values$perf4hr_diff_wales)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_wales)` Wales Major performance at `r three_nations_values$perf4hr_wales`%. 
 
 **Note on data quality and limitations:** While the data undergo routine validation checks, differences in local service arrangements may affect comparisons between areas and over time. Due to the timeliness of data submissions and the dynamic nature of the A&E dataset, figures may be revised in subsequent publications.
+
+Waiting times for Type 1 Departments in England and Major Departments in Wales are broadly comparable with Scottish Type 1 – Core sites. Other emergency care site types are not directly comparable across UK nations due to differences in definitions and service models.
 
 **Contact information**
 

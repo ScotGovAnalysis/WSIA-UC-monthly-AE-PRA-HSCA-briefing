@@ -4,7 +4,7 @@
 # Purpose:       Outputs for HSCA briefing (monthly A&E PRA)
 # Author:        Sophie Quinn
 # Date created:  2026-07-06
-# Last updated:  2026-07-10 by SQ
+# Last updated:  2026-07-27 by KH
 # ============================================================
 
 # Inputs: Data in environment from data processing
@@ -33,6 +33,10 @@ last_12_month_perf <- get_last_12_month_perf(
 
 create_4hr_performance_chart_monthly(
   monthly_data$Scotland
+)
+
+five_lowest_boards <- get_five_lowest_boards_monthly(
+  monthly_data$Boards
 )
 
 five_lowest_sites <- get_five_lowest_sites_monthly(
