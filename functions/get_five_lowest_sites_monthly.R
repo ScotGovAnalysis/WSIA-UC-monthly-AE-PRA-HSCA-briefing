@@ -4,7 +4,8 @@ get_five_lowest_sites_monthly <- function(monthly_data_sites) {
   latest_month <- monthly_dates$date_this_month
   
   lowest_sites <- monthly_data_sites %>%
-    filter(MonthEndingDate == latest_month) %>%
+    filter(MonthEndingDate == latest_month,
+           DepartmentType == "Type 1") %>%
     arrange(PercentageWithin4HoursAll) %>%
     slice_head(n = 5) %>%
     transmute(
