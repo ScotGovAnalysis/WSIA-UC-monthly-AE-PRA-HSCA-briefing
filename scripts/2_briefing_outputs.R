@@ -86,4 +86,24 @@ rmarkdown::render(input = here("scripts", "HSCA_briefing_monthly_AE.Rmd"),
                     )
                   )
 
+
+
+# ---- A&E FMQ monthly outputs markdown ----
+
+rmarkdown::render(input = here("scripts", "AE_FMQ_monthly.Rmd"),
+                  output_file = here(
+                    "outputs", 
+                    paste0("AE FMQ Monthly Update - ",format(monthly_dates$date_this_month, "%B %Y"))
+                  )
+)
+
+
+# ---- A&E SCANCE monthly outputs markdown ----
+
+rmarkdown::render(input = here("scripts", "AE_SCANCE_monthly.Rmd"),
+                  output_file = here(
+                    "outputs", 
+                    paste0("AE SCANCE Monthly Update - ",format(monthly_dates$date_this_month, "%B %Y"))
+                  )
+)
                   

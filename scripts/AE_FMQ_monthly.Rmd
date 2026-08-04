@@ -1,0 +1,82 @@
+---
+title: ""
+output:
+  word_document:
+    reference_docx: ../templates/AE_FMQ_template.docx
+---
+::: {custom-style="Normal"}
+**Note on Quality Assessment**
+
+<br>
+<br>
+
+This **Monthly A&E FMQ** output is automated and requires some QA to ensure outputs have been produced properly. Steps include:
+
+- Sense-checking the figures and semantics.
+- Check the dates to ensure these have correctly updated.
+
+**Please see the automated outputs below.**
+:::
+
+<br>
+---
+<br>
+
+::: {custom-style="Normal2"}
+**WEEKLY AND MONTHLY A&E STATISTICS**
+:::
+
+::: {custom-style="TableCaption"}
+Emergency Department Activity & Waiting Times, all sites (Type 1 and 3)
+:::
+
+
+::: {custom-style="Normal"}
+```{r echo = FALSE}
+
+FMQ_table_monthly <- monthly_data$Scotland %>% 
+  tail(1) %>% 
+  select(
+    "Month" = MonthEndingDate,
+    "Attends" = NumberOfAttendancesAll,
+    "Over 4 Hours" = NumberOver4HoursAll,
+    "4 Hour %" = PercentageWithin4HoursAll,
+    "Over 8 Hours" = NumberOver8HoursEpisode,
+    "Over 8 Hour %" = PercentageOver8HoursEpisode,
+    "Over 12 Hours" = NumberOver12HoursEpisode,
+    "Over 12 Hour %" = PercentageOver12HoursEpisode
+    ) %>% 
+  mutate(`Month` = format(`Month`, "%b-%y"))
+
+
+
+FMQ_table_monthly %>% 
+  flextable() %>%
+  theme_box() %>% 
+  align(align = "center", part = "all") %>%
+  width(width = 0.8) %>% 
+  colformat_char(j = c(4,6,8), suffix = "%") %>% 
+  colformat_num(j=c(2,3,5,7), big.mark = ",", digits = 0) %>%
+  bg(i = 1, bg = "yellow") %>% 
+  bold(i = 1) %>% 
+  fontsize(size = 10, part = "all")
+
+
+```
+::: 
+
+<br>
+
+<br>
+
+::: {custom-style="NormalBoxed"}
+***LATEST MONTHLY PERFORMANCE (`r format(monthly_dates$date_this_month, "%B %Y")`): Top line if necessary.*** *All sites A&Es at `r monthly_values_all$perf4hr_this_month`% and `r monthly_values_type1$perf4hr_this_month`% for core, `r up_down(monthly_values_all$perf4hr_diff_last_month)` from `r monthly_values_all$perf4hr_last_month`% for all sites, `r up_down(monthly_values_type1$perf4hr_diff_last_month)` from `r monthly_values_type1$perf4hr_last_month`% for core sites in `r format(monthly_dates$date_last_month, "%B")`.* 
+::: 
+
+::: {custom-style="Normal2"}
+**GB COMPARISONS – A&E PERFORMANCE**
+
+**`r format(monthly_dates$date_publication, "%d %B")`:** Latest monthly statistics published show Scotland’s core A&E performance in `r format(monthly_dates$date_this_month, "%B %Y")` was `r monthly_values_type1$perf4hr_this_month`%, compared with `r three_nations_values$perf4hr_england`% in England Type 1 and `r three_nations_values$perf4hr_wales`% in Wales Major sites.
+
+- In `r monthly_values_type1$perf4hr_this_month`, Scotland Type 1 sites `r out_underperformed(three_nations_values$perf4hr_diff_england)` those in England by `r abs(three_nations_values$perf4hr_diff_england)` percentage points.
+:::

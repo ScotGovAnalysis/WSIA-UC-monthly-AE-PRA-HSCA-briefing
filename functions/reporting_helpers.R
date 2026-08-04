@@ -30,3 +30,12 @@ above_below <- function(x) {
     TRUE ~ "same as"
   )
 }
+
+
+out_underperformed <- function(x) {
+  case_when(
+    x > 0 ~ "outperformed",
+    x < 0 ~ "underperformed",
+    TRUE ~ "equated"
+  )
+}
