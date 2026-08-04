@@ -4,7 +4,8 @@ get_five_lowest_boards_monthly <- function(monthly_data_boards) {
   latest_month <- monthly_dates$date_this_month
   
   lowest_boards <- monthly_data_boards %>%
-    filter(MonthEndingDate == latest_month) %>%
+    filter(MonthEndingDate == latest_month,
+           DepartmentType == "All") %>%
     arrange(PercentageWithin4HoursAll) %>%
     slice_head(n = 5) %>%
     transmute(
