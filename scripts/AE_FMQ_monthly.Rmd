@@ -5,24 +5,28 @@ output:
     reference_docx: ../templates/AE_FMQ_template.docx
 ---
 ::: {custom-style="Normal"}
-**Note on Quality Assessment**
+**Note on Quality Assessment:**
 
 <br>
 <br>
 
 This **Monthly A&E FMQ** output is automated and requires some QA to ensure outputs have been produced properly. Steps include:
 
-- Sense-checking the figures and semantics.
-- Check the dates to ensure these have correctly updated.
+- Sense-checking the figures and wording in sentences.
+- Checking the dates to ensure these have correctly updated.
+
+<br>
 
 **Please see the automated outputs below.**
+
 :::
 
-<br>
 ---
+
 <br>
 
-::: {custom-style="Normal2"}
+
+::: {custom-style="Normal 2"}
 **WEEKLY AND MONTHLY A&E STATISTICS**
 :::
 
@@ -67,16 +71,20 @@ FMQ_table_monthly %>%
 
 <br>
 
-<br>
-
 ::: {custom-style="NormalBoxed"}
 ***LATEST MONTHLY PERFORMANCE (`r format(monthly_dates$date_this_month, "%B %Y")`): Top line if necessary.*** *All sites A&Es at `r monthly_values_all$perf4hr_this_month`% and `r monthly_values_type1$perf4hr_this_month`% for core, `r up_down(monthly_values_all$perf4hr_diff_last_month)` from `r monthly_values_all$perf4hr_last_month`% for all sites, `r up_down(monthly_values_type1$perf4hr_diff_last_month)` from `r monthly_values_type1$perf4hr_last_month`% for core sites in `r format(monthly_dates$date_last_month, "%B")`.* 
 ::: 
 
-::: {custom-style="Normal2"}
-**GB COMPARISONS – A&E PERFORMANCE**
+<br>
 
+<br>
+
+::: {custom-style="Normal 2"}
+**GB COMPARISONS – A&E PERFORMANCE**
+:::
+
+::: {custom-style="NormalBoxed"}
 **`r format(monthly_dates$date_publication, "%d %B")`:** Latest monthly statistics published show Scotland’s core A&E performance in `r format(monthly_dates$date_this_month, "%B %Y")` was `r monthly_values_type1$perf4hr_this_month`%, compared with `r three_nations_values$perf4hr_england`% in England Type 1 and `r three_nations_values$perf4hr_wales`% in Wales Major sites.
 
-- In `r monthly_values_type1$perf4hr_this_month`, Scotland Type 1 sites `r out_underperformed(three_nations_values$perf4hr_diff_england)` those in England by `r abs(three_nations_values$perf4hr_diff_england)` percentage points.
+• In `r format(monthly_dates$date_this_month, "%B %Y")`, Scotland Type 1 sites `r out_underperformed(three_nations_values$perf4hr_diff_england)` those in England by `r abs(three_nations_values$perf4hr_diff_england)` percentage points.
 :::
