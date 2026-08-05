@@ -25,6 +25,8 @@ library(scales)
 library(ggplot2)
 library(ggExtra)
 library(flextable)
+library(ggrepel)
+library(openxlsx)
 
 
 # 2 ---- Load functions ----
