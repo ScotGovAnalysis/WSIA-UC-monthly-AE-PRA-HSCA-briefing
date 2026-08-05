@@ -5,21 +5,24 @@ output:
     reference_docx: ../templates/AE_SCANCE_template.docx
 ---
 ::: {custom-style="Normal"}
-**Note on Quality Assessment**
+**Note on Quality Assessment:**
 
 <br>
 <br>
 
 This **Monthly A&E SCANCE** output is automated and requires some QA to ensure outputs have been produced properly. Steps include:
 
-- Sense-checking the figures and semantics.
-- Check the dates to ensure these have correctly updated.
-
-**Please see the automated outputs below.**
-:::
+- Sense-checking the figures and wording in sentences.
+- Checking the dates to ensure these have correctly updated.
 
 <br>
+
+**Please see the automated outputs below.**
+
+:::
+
 ---
+
 <br>
 
 ::: {custom-style="Normal"}
@@ -28,13 +31,19 @@ This **Monthly A&E SCANCE** output is automated and requires some QA to ensure o
 
 ::: {custom-style="NormalBoxed"}
 On `r format(monthly_dates$date_publication, "%d %B %Y")` the following Health Statistics will be published:
+
 <br>
+
 **Weekly Accident and Emergency (A&E) Activity**
-- The published statistics will include statistics for the w/e DD/MM/YYYY. These statistics are restricted under pre-release legislation until publication.
-- Management information for the w/e DD/MM/YYYY suggests weekly performance against the four hour A&E measure for core sites was around XX.X%.
+
+[Weekly lines go here]
+
 <br>
+
 **Monthly Accident and Emergency (A&E) Activity**
-- The published statistics will include statistics for `r format(monthly_dates$date_this_month, "%B %Y")`. These statistics are restricted under pre-release legislation until publication.
+
+• The published statistics will include statistics for `r format(monthly_dates$date_this_month, "%B %Y")`. These statistics are restricted under pre-release legislation until publication.
+
 :::
 
 <br>
@@ -44,17 +53,27 @@ On `r format(monthly_dates$date_publication, "%d %B %Y")` the following Health S
 :::
 
 ::: {custom-style="WarningMessage"}
-All statistics in the Speaking Note are restricted under pre-release legislation until 9:30am on `r format(monthly_dates$date_publication, "%d %B %Y")`.
+**All statistics in the Speaking Note are restricted under pre-release legislation until 9:30am on `r format(monthly_dates$date_publication, "%d %B %Y")`.**
 :::
 
 ::: {custom-style="NormalBoxed"}
+
+**[A&E (Official Stats)]{.underline}**
+
+<br>
+
+**Weekly A&E Performance**
+
 [Weekly lines go here]
 
 <br>
 
 **Monthly A&E Performance**
-- Monthly performance for `r format(monthly_dates$date_this_month, "%B %Y")` at `r monthly_values_all$perf4hr_this_month`% in All sites, `r up_down(monthly_values_all$perf4hr_diff_last_month)` compared to the previous month (`r monthly_values_all$perf4hr_last_month`%) and `r up_down(monthly_values_all$perf4hr_diff_last_year)` compared to the same month last year (`r monthly_values_all$perf4hr_last_year`%). Performance at `r monthly_values_type1$perf4hr_this_month`% in Core sites, `r up_down(monthly_values_type1$perf4hr_diff_last_month)` compared to the previous month (`r monthly_values_type1$perf4hr_last_month`%) and down compared to the equivalent month last year (`r monthly_values_type1$perf4hr_last_year`%).
-- The number of patients spending over 12 hours in A&E in `r format(monthly_dates$date_this_month, "%B %Y")` was `r comma(monthly_values_all$waits12hr_this_month)`. This is `r higher_lower(monthly_values_all$waits12hr_diff_last_month)` the previous month (`r comma(monthly_values_all$waits12hr_last_month)`), but `r higher_lower(monthly_values_all$waits12hr_diff_last_year)` than the equivalent month last year (`r comma(monthly_values_all$waits12hr_last_year)`).
-- Core performance in Scotland for `r format(monthly_dates$date_this_month, "%B")` was `r abs(three_nations_values$perf4hr_diff_england)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_england)` England (Type 1 – `r three_nations_values$perf4hr_england`% in `r format(monthly_dates$date_this_month, "%B %Y")`). 
+
+• Monthly performance for `r format(monthly_dates$date_this_month, "%B %Y")` at `r monthly_values_all$perf4hr_this_month`% in All sites, `r up_down(monthly_values_all$perf4hr_diff_last_month)` compared to the previous month (`r monthly_values_all$perf4hr_last_month`%) and `r up_down(monthly_values_all$perf4hr_diff_last_year)` compared to the same month last year (`r monthly_values_all$perf4hr_last_year`%). Performance at `r monthly_values_type1$perf4hr_this_month`% in Core sites, `r up_down(monthly_values_type1$perf4hr_diff_last_month)` compared to the previous month (`r monthly_values_type1$perf4hr_last_month`%) and down compared to the equivalent month last year (`r monthly_values_type1$perf4hr_last_year`%).
+
+• The number of patients spending over 12 hours in A&E in `r format(monthly_dates$date_this_month, "%B %Y")` was `r comma(monthly_values_all$waits12hr_this_month)`. This is `r higher_lower(monthly_values_all$waits12hr_diff_last_month)` the previous month (`r comma(monthly_values_all$waits12hr_last_month)`), but `r higher_lower(monthly_values_all$waits12hr_diff_last_year)` than the equivalent month last year (`r comma(monthly_values_all$waits12hr_last_year)`).
+
+• Core performance in Scotland for `r format(monthly_dates$date_this_month, "%B")` was `r abs(three_nations_values$perf4hr_diff_england)` percentage points `r higher_lower(three_nations_values$perf4hr_diff_england)` England (Type 1 – `r three_nations_values$perf4hr_england`% in `r format(monthly_dates$date_this_month, "%B %Y")`). 
 
 :::
