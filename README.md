@@ -14,7 +14,8 @@ The RAP:
 
 - Processes the latest monthly A&E PRA data.
 - Produces briefing outputs in the approved HSCA briefing format.
-- Generates a processed dataset suitable for responding to ad hoc analytical requests.
+- Generates processed datasets suitable for responding to ad hoc analytical requests.
+- Creates supporting outputs for the FMQ and SCANCE.
 - Supports a consistent, reproducible and auditable analytical process.
 
 ## Repository Contents
