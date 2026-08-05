@@ -106,4 +106,15 @@ rmarkdown::render(input = here("scripts", "AE_SCANCE_monthly.Rmd"),
                     paste0("AE SCANCE Monthly Update - ",format(monthly_dates$date_this_month, "%B %Y"))
                   )
 )
+
+
+# ---- Three nations comparison ----
+
+three_nations_data <- combine_three_nations_data(
+  monthly_data$Scotland
+)
+
+create_three_nations_pra_chart(three_nations_data)
+
+create_three_nations_pra_workbook(three_nations_data)
                   
