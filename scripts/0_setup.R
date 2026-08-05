@@ -24,6 +24,7 @@ library(knitr)
 library(scales)
 library(ggplot2)
 library(ggExtra)
+library(flextable)
 
 
 # 2 ---- Load functions ----
